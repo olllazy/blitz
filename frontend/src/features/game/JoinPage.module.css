@@ -1,0 +1,57 @@
+.page {
+  min-height: 100dvh;
+  padding: 20px 16px 40px;
+  background: var(--paper);
+}
+
+.top {
+  max-width: 420px;
+  margin: 0 auto 32px;
+}
+
+.card {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 28px 22px;
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.title {
+  font-size: 28px;
+}
+
+.lead {
+  margin-top: -8px;
+  color: var(--ink-soft);
+}
+
+.gameTitle {
+  justify-self: start;
+  padding: 3px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--lilac);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pin {
+  min-height: 76px;
+  font-family: var(--font);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+.error {
+  color: #c4321a;
+  font-weight: 600;
+}

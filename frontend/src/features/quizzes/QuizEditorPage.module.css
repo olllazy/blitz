@@ -1,0 +1,20 @@
+.head {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.head > a {
+  margin-left: -14px;
+}
+
+.title {
+  font-size: clamp(26px, 5vw, 40px);
+}
+
+.error {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+}

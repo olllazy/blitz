@@ -1,0 +1,25 @@
+.form {
+  display: grid;
+  gap: 18px;
+}
+
+.formError {
+  padding: 10px 14px;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: #ffe2d9;
+  font-weight: 600;
+}
+
+.demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 2px dashed var(--paper-deep);
+  font-size: 14px;
+  color: var(--ink-soft);
+}

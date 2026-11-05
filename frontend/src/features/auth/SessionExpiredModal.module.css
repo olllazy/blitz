@@ -1,0 +1,28 @@
+.dialog {
+  width: calc(100% - 32px);
+  max-width: 420px;
+  padding: 28px 24px 24px;
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+  color: var(--ink);
+}
+
+.dialog::backdrop {
+  background: rgb(29 26 47 / 0.45);
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.text {
+  margin-bottom: 12px;
+  color: var(--ink-soft);
+}
+
+.timer {
+  margin-bottom: 20px;
+  font-weight: 600;
+}

@@ -1,0 +1,58 @@
+name: blitz
+
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: blitz
+      POSTGRES_PASSWORD: blitz
+      POSTGRES_DB: blitz
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:${DB_PORT:-55432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U blitz -d blitz"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgres://blitz:blitz@db:5432/blitz?sslmode=disable
+      JWT_SECRET: ${JWT_SECRET:-local-dev-secret}
+      SEED_DEMO: "true"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  web:
+    build: ./frontend
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # docker compose --profile e2e run --rm e2e
+  e2e:
+    profiles: ["e2e"]
+    image: mcr.microsoft.com/playwright:v1.64.1-noble
+    working_dir: /app
+    environment:
+      BASE_URL: http://web
+      SCREENSHOT_DIR: /screenshots
+      CI: "true"
+    volumes:
+      - ./frontend:/app
+      - e2e_modules:/app/node_modules
+      - ./docs/screenshots:/screenshots
+    command: sh -c "npm ci --no-audit --no-fund && npx playwright test"
+    depends_on:
+      - web
+
+volumes:
+  pgdata:
+  e2e_modules:

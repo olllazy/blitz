@@ -1,0 +1,169 @@
+.card {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.number {
+  display: grid;
+  place-items: center;
+  min-width: 40px;
+  height: 40px;
+  border: var(--border);
+  border-radius: 12px;
+  background: var(--ink);
+  color: var(--sun);
+  font-family: var(--font);
+  font-weight: 700;
+}
+
+.tools {
+  display: flex;
+  gap: 2px;
+}
+
+.options {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.radio {
+  position: relative;
+  flex: none;
+  cursor: pointer;
+}
+
+.radio input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--tile);
+}
+
+.radio input:focus-visible + .icon {
+  outline: 3px solid var(--cobalt);
+  outline-offset: 2px;
+}
+
+.correct .icon {
+  background: var(--tile);
+  color: var(--card);
+}
+
+.correct .optionInput {
+  background: color-mix(in srgb, var(--mint) 14%, var(--card));
+}
+
+.correct::after {
+  content: 'верный';
+  position: absolute;
+  right: 44px;
+  padding: 1px 8px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--mint);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.optionInput {
+  padding-right: 90px;
+}
+
+.removeOption {
+  position: absolute;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.removeOption:hover {
+  background: var(--paper-deep);
+}
+
+.option:not(:has(.removeOption)).correct::after {
+  right: 12px;
+}
+
+.error {
+  color: #c4321a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.time select {
+  min-height: 38px;
+  padding: 0 10px;
+  border: var(--border);
+  border-radius: 10px;
+  background: var(--sun);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (min-width: 760px) {
+  .card {
+    padding: 24px;
+  }
+}

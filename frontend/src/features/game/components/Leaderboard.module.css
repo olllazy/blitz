@@ -1,0 +1,61 @@
+.list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px 10px 10px;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--ink);
+}
+
+.place {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  background: var(--paper-deep);
+  font-family: var(--font);
+  font-weight: 700;
+}
+
+.row:nth-child(1) .place {
+  background: var(--sun);
+}
+
+.row:nth-child(2) .place {
+  background: var(--lilac);
+}
+
+.row:nth-child(3) .place {
+  background: var(--tomato);
+}
+
+.name {
+  flex: 1;
+  overflow: hidden;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.score {
+  font-family: var(--font);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.me {
+  background: var(--sun);
+}

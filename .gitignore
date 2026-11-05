@@ -1,0 +1,17 @@
+# frontend
+node_modules/
+dist/
+*.tsbuildinfo
+test-results/
+playwright-report/
+
+# env
+.env
+.env.local
+
+# editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db

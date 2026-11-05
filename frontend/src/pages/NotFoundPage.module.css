@@ -1,0 +1,17 @@
+.page {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 16px;
+  min-height: 100dvh;
+  padding: 24px;
+  text-align: center;
+}
+
+.code {
+  font-family: var(--font);
+  font-size: clamp(96px, 26vw, 200px);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--tomato);
+}

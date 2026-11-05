@@ -1,0 +1,52 @@
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+.input:focus {
+  outline: 3px solid #6d86ff;
+  outline-offset: 1px;
+  background: #fff;
+}
+
+.input[aria-invalid='true'] {
+  border-color: #c4321a;
+  background: #fff1ec;
+}
+
+.textarea {
+  min-height: 84px;
+  resize: vertical;
+}
+
+.hint,
+.error {
+  font-size: 13px;
+}
+
+.hint {
+  color: var(--muted);
+}
+
+.error {
+  color: #c4321a;
+  font-weight: 600;
+}

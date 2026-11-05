@@ -1,0 +1,56 @@
+.ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  flex: none;
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--card);
+}
+
+.ring svg {
+  position: absolute;
+  inset: 4px;
+  transform: rotate(-90deg);
+}
+
+.track,
+.bar {
+  fill: none;
+  stroke-width: 12;
+}
+
+.track {
+  stroke: var(--paper-deep);
+}
+
+.bar {
+  stroke: var(--cobalt);
+  stroke-linecap: round;
+}
+
+.value {
+  position: relative;
+  font-family: var(--font);
+  font-size: 24px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.hurry .bar {
+  stroke: var(--tomato);
+}
+
+@media (min-width: 1100px) {
+  .ring {
+    width: 104px;
+    height: 104px;
+  }
+
+  .value {
+    font-size: 34px;
+  }
+}

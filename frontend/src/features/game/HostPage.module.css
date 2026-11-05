@@ -1,0 +1,311 @@
+.stage {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--stage);
+  color: var(--paper);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  font-size: 14px;
+}
+
+.title {
+  display: none;
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.pinSmall {
+  padding: 4px 12px;
+  border: 2px solid var(--paper);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pinSmall b {
+  font-family: var(--font);
+  letter-spacing: 0.08em;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  padding: 8px 16px 32px;
+}
+
+.screen {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* лобби */
+
+.lobby {
+  display: grid;
+  gap: 24px;
+}
+
+.invite {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 28px 20px;
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  color: var(--ink);
+  text-align: center;
+  container-type: inline-size;
+}
+
+.label {
+  font-weight: 600;
+}
+
+/* размер от ширины карточки, а не экрана - иначе код вылезает за край */
+.pin {
+  font-family: var(--font);
+  font-size: min(14.5cqi, 128px);
+  white-space: nowrap;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.pin span {
+  margin-left: 0.25em;
+}
+
+.qr {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.qr svg {
+  width: 112px;
+  height: 112px;
+  border: var(--border);
+  border-radius: 12px;
+}
+
+.waiting {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
+.waitingHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.waitingHead h2 {
+  font-size: 26px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 8px 16px;
+  border: var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.chip:nth-child(4n + 2) {
+}
+
+.chip:nth-child(4n + 3) {
+}
+
+.chip:nth-child(4n + 4) {
+}
+
+.offline {
+  opacity: 0.45;
+}
+
+.hint {
+  opacity: 0.6;
+}
+
+/* вопрос */
+
+.question,
+.revealMain {
+  display: grid;
+  gap: 20px;
+}
+
+.qHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counter {
+  justify-self: start;
+  padding: 4px 14px;
+  border: 2px solid var(--paper);
+  border-radius: 999px;
+  font-family: var(--font);
+  font-size: 14px;
+}
+
+.qText {
+  font-size: clamp(26px, 4.5vw, 56px);
+  text-wrap: balance;
+}
+
+.qTextSmall {
+  font-size: clamp(22px, 3vw, 36px);
+  text-wrap: balance;
+}
+
+.qFoot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.answered {
+  font-size: 18px;
+}
+
+.answered b {
+  font-family: var(--font);
+  font-size: 26px;
+  color: var(--sun);
+}
+
+/* показ ответа */
+
+.reveal {
+  display: grid;
+  gap: 28px;
+}
+
+.revealSide {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.revealSide h2 {
+  font-size: 22px;
+}
+
+/* итоги */
+
+.finished {
+  display: grid;
+  gap: 32px;
+  padding-top: 12px;
+}
+
+.finishedTitle {
+  font-size: clamp(32px, 6vw, 64px);
+  text-align: center;
+}
+
+.rest {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.finishedActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.closed {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  margin: auto;
+  text-align: center;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  translate: -50% 0;
+  padding: 12px 20px;
+  border: var(--border);
+  border-radius: 999px;
+  background: var(--tomato);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+@media (min-width: 900px) {
+  .top {
+    padding: 20px 32px;
+  }
+
+  .title {
+    display: inline;
+  }
+
+  .main {
+    padding: 8px 32px 40px;
+  }
+
+  .lobby {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 40px;
+  }
+
+  .invite {
+    padding: 40px 32px;
+  }
+
+  .qr svg {
+    width: 148px;
+    height: 148px;
+  }
+
+  .reveal {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 40px;
+  }
+}
